@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:oracle:thin:@122.34.228.67:32771/xe?serverTimezone=UTC&characterEncoding=UTF8
+    username: com
+    password: com123
+    
+    #url: ENC("WyxbpQpzOp9CFr8qQoX+/kKp72qobgaowQaODNwWYUuUsRbBtOO0geNgB221H+1T/PzTDNIM4T/Se57CGgELwDcMZb+0gMhdYuX4R4ImafwFTNcLa0EVfCT6r/1Bd8qBpfpvjxh+9FbTWKmOkvO/3Q=="")
+    #username: ENC("dB/dWpdKtt8R3lJiVwRgDm0EiKUqbf30aGqTFaxWyEQ=")
+    #password: ENC("9lf6+nCB8rTPfyIXu9ye4dMBve0FkqTwF7oBIDLMoA8=")
+  devtools:
+    restart:
+      enabled: true
+      poll-interval: 2
+      quiet-period: 1
+  thymeleaf:
+      cache: false
+  servlet:
+    multipart:
+      enabled: true
+      maxFileSize: 10MB # 파일 하나의 최대 크기
+      maxRequestSize: 30MB  # 한 번에 최대 업로드 가능 용량
+
+jasypt:
+  encryptor:
+    bean: jasyptEncryptor
+server:
+  servlet:
+    context-path: /
+  port: '8080'
+
+knwp:
+  upload-path: "C:\\temp\\"
